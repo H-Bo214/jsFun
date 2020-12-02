@@ -46,7 +46,6 @@ const kittyPrompts = {
     // Sort the kitties by their age
 
     const result = kitties.sort((a, b) => b.age - a.age);
-    console.log('result', result)
     return result;
 
     // Annotation:
@@ -67,7 +66,12 @@ const kittyPrompts = {
     // },
     // ...etc]
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = kitties.reduce((allKitties, kitty) => {
+      kitty.age += 2
+      allKitties.push(kitty)
+      allKitties.sort((a, b) => b.age - a.age)
+      return allKitties
+    }, [])
     return result;
   }
 };
