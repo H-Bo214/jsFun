@@ -1,3 +1,4 @@
+/* eslint-disable */
 const { kitties } = require('./datasets/kitties');
 const { clubs } = require('./datasets/clubs');
 const { mods } = require('./datasets/mods');
@@ -27,11 +28,18 @@ const kittyPrompts = {
 
     // Return an array of just the names of kitties who are orange e.g.
     // ['Tiger', 'Snickers']
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = kitties.filter(kitty => kitty.color === 'orange')
+    .map(el => el.name);
+
     return result;
 
     // Annotation:
     // Write your annotation here as a comment
+      // access the kitties array
+        // access the color key
+        // create logic, if the color key VALUE is 'orange'
+        // I need to access the name key 
+        // I need to return the VALUES of the orange cat names in an array. 
   },
 
   sortByAge() {
