@@ -147,11 +147,24 @@ const modPrompts = {
     //   { mod: 4, studentsPerInstructor: 8 }
     // ]
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = mods.reduce((averageStudents, mod) => {
+      const average = {}
+      average.mod = mod.mod
+      const count = mod.students / mod.instructors
+      average.studentsPerInstructor = count
+      averageStudents.push(average)
+      return averageStudents
+    }, [])
     return result;
 
     // Annotation:
     // Write your annotation here as a comment
+    // return an array of objects with 2 key/value pairs, mod and stuPerInst
+    // iterate thru the mods array of objects
+    // access the mod key and set the value for mods 1-4
+    // create another key/value pair studentsPerInstructor
+    // in order to get the average student count I need to divide the number of students by the number of instructors. 
+
   }
 };
 
