@@ -195,11 +195,21 @@ const cakePrompts = {
     //    ..etc
     // ]
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = cakes.reduce((inStockCakes, cake) => {
+      const cakeStock ={}
+      cakeStock.flavor = cake.cakeFlavor
+      cakeStock.inStock = cake.inStock
+      inStockCakes.push(cakeStock)
+      return inStockCakes
+    }, [])
     return result;
 
     // Annotation:
     // Write your annotation here as a comment
+    // iterate over the cakes array
+    // access the cakeFlavor key/value pair
+    // create an obj with a key of 'flavor' and a value of cakeFlavor
+    // add an inStock key with a value of the number of instock cakes per flavor
   },
 
   onlyInStock() {
